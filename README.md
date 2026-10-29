@@ -6,6 +6,7 @@ A static portfolio for job applications and professional networking.
 
 - `index.html`: welcome page, portrait, and profile and contact links.
 - `experience.html`: filterable work and service experience with expandable details.
+- `school-projects.html`: four placeholder cards for future coursework projects.
 - `interests.html`: coding projects, ancient American civilizations, and running.
 - `books.html`: a keyboard-accessible bookshelf and a placeholder for another book.
 - `styles.css`: shared layout, typography, responsive styling, and interaction states.
@@ -14,7 +15,7 @@ A static portfolio for job applications and professional networking.
 
 ## Preview
 
-Serve this folder with any static web server, or open `index.html` in a browser. No build step or package installation is needed. All four pages use relative links and work on GitHub Pages under the repository path.
+Serve this folder with any static web server, or open `index.html` in a browser. No build step or package installation is needed. All five pages use relative links and work on GitHub Pages under the repository path.
 
 ## Interaction and accessibility
 

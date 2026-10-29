@@ -171,6 +171,9 @@ details[open] > summary .disclosure-icon { transform: rotate(45deg); }
 .project-item > p { margin-bottom: 12px; color: var(--muted); font-size: .85rem; }
 .project-item details p { margin: 4px 0 14px; color: var(--muted); font-size: .84rem; }
 .project-item .text-link { margin-top: 14px; font-size: .77rem; }
+.school-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 34px; }
+.school-project-card .project-art { border: 1px dashed #c6d3e0; background: #edf2f8; }
+.school-project-status { display: inline-block; margin-bottom: 8px; color: var(--muted); font-size: .68rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
 .story-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 65px; align-items: center; padding-top: 39px; border-top: 1px solid var(--line); }
 .story-grid h2 { margin-bottom: 20px; }
 .story-grid p { max-width: 590px; color: var(--muted); font-size: .94rem; }
