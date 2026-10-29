@@ -41,17 +41,10 @@
     </div>
     <section class="book-suggestion" id="suggest-a-book" aria-labelledby="suggestion-title">
       <div class="suggestion-intro"><p class="eyebrow">Your turn</p><h2 id="suggestion-title">What should I read next?</h2><p>Have a book you think I’d enjoy? Share the title and a little about what made it worth reading.</p><p class="suggestion-email">Prefer to write directly? <a href="mailto:cramsey8@byu.edu?subject=Book%20suggestion">Email me a recommendation.</a></p></div>
-      <form class="book-suggestion-form" action="mailto:cramsey8@byu.edu" method="post" enctype="text/plain" data-book-suggestion aria-labelledby="suggestion-title" aria-describedby="suggestion-help">
-        <div class="suggestion-fields">
-          <div class="suggestion-field"><label for="suggested-title">Book title <span>(required)</span></label><input id="suggested-title" name="book_title" type="text" maxlength="120" required placeholder="The book you keep recommending"></div>
-          <div class="suggestion-field"><label for="suggested-author">Author <span>(optional)</span></label><input id="suggested-author" name="author" type="text" maxlength="120" placeholder="Who wrote it?"></div>
-        </div>
-        <div class="suggestion-field"><label for="suggested-reason">Why do you recommend it? <span>(optional)</span></label><textarea id="suggested-reason" name="reason" rows="4" maxlength="600" placeholder="What stayed with you after reading it?"></textarea></div>
-        <p class="suggestion-help" id="suggestion-help">Opens a draft in your email app. Review it there, then send it to me. You can also copy your suggestion and paste it into an email.</p>
-        <div class="suggestion-actions"><button class="button" type="submit">Open email draft <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button><button class="button button-light" type="button" data-copy-suggestion>Copy suggestion</button></div>
-        <p class="suggestion-status" data-suggestion-status role="status" aria-live="polite" aria-atomic="true"></p>
-      </form>
-      <noscript><p class="suggestion-help">To suggest a book, use the email link and include its title, author, and why you recommend it.</p></noscript>
+      <div class="suggestion-form-wrap">
+        <iframe class="suggestion-form-embed" src="https://docs.google.com/forms/d/e/1FAIpQLSfRpP1YGdZIozdPMVIQ-Bem6CP-iKyLtQ1fnLNO4NMG5XdUoQ/viewform?embedded=true" title="Suggest a book for Cade Ramsey" width="640" height="766" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Loading…</iframe>
+        <p class="suggestion-help" id="suggestion-help">Suggestions are collected through Google Forms. You can also <a href="mailto:cramsey8@byu.edu?subject=Book%20suggestion">send me your recommendation by email</a>.</p>
+      </div>
     </section>
     <div class="page-crosslink"><p>A little more about what I spend time on.</p><a class="text-link" href="interests.html"><span>Explore my interests</span><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div>
   </main>
