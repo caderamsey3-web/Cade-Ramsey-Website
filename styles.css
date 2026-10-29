@@ -124,7 +124,9 @@ a:hover > .icon-arrow, button:hover > .icon-arrow { transform: translate(3px, -2
 .js [data-expand-all] { display: inline-block; }
 .experience-list { margin-top: 9px; }
 .experience-row { display: grid; grid-template-columns: 185px minmax(0,1fr); gap: 42px; padding: 34px 0 37px; border-bottom: 1px solid var(--line); scroll-margin-top: 105px; }
+.experience-row-photo { grid-template-columns: 240px minmax(0, 1fr); }
 .role-figure { margin: 0; }
+.role-photo { width: 100%; height: auto; border-radius: 3px; background: var(--blue); }
 .role-art { padding: 5px 8px; background: var(--blue); border-radius: 3px; }
 .role-art svg { width: 100%; height: auto; }
 .role-figure figcaption { padding-top: 16px; }
@@ -179,8 +181,9 @@ details[open] > summary .disclosure-icon { transform: rotate(45deg); }
 .story-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 65px; align-items: center; padding-top: 39px; border-top: 1px solid var(--line); }
 .story-grid h2 { margin-bottom: 20px; }
 .story-grid p { max-width: 590px; color: var(--muted); font-size: .94rem; }
-.history-illustration { align-self: end; overflow: hidden; border-radius: 3px; background: var(--blue); }
-.history-illustration svg { width: 100%; height: auto; }
+.history-photo { width: min(100%, 360px); min-width: 0; margin: 0; justify-self: end; }
+.history-photo img { width: 100%; height: auto; border-radius: 3px; background: var(--blue); }
+.history-photo figcaption { padding-top: 10px; color: var(--muted); font-size: .73rem; }
 .running-section { display: grid; grid-template-columns: 1.15fr .85fr; gap: 60px; align-items: center; padding: 37px 40px; border-radius: 4px; background: var(--ink); color: white; scroll-margin-top: 100px; }
 .running-section .eyebrow { color: var(--accent-light); }
 .running-section h2 { color: white; margin-bottom: 17px; font-size: 2.4rem; }
@@ -253,6 +256,7 @@ details[open] > summary .disclosure-icon { transform: rotate(45deg); }
   .home-hero { gap: 42px; }
   .site-nav { gap: 22px; }
   .experience-row { grid-template-columns: 160px minmax(0,1fr); gap: 28px; }
+  .experience-row-photo { grid-template-columns: 200px minmax(0, 1fr); }
   .books-layout { grid-template-columns: 1fr; gap: 30px; }
   .book-options { width: 100%; max-width: 640px; margin-inline: auto; }
   .book-art { width: 155px; padding: 21px 17px 19px 21px; height: 230px; }
@@ -275,6 +279,7 @@ details[open] > summary .disclosure-icon { transform: rotate(45deg); }
   .context-strip { grid-template-columns: 1.5fr 1fr; }
   .context-strip > div:last-child { grid-column: 1 / -1; }
   .experience-row { grid-template-columns: 135px minmax(0,1fr); gap: 25px; }
+  .experience-row-photo { grid-template-columns: 170px minmax(0, 1fr); }
   .project-list { gap: 20px; }
   .education-grid { gap: 30px; }
   .running-section { gap: 30px; padding: 30px; }
@@ -324,6 +329,8 @@ details[open] > summary .disclosure-icon { transform: rotate(45deg); }
   .role-figure figcaption { padding-top: 0; }
   .role-figure strong { font-size: 1.9rem; }
   .role-figure figcaption span { max-width: 200px; font-size: .7rem; }
+  .role-figure-photo { display: block; width: min(100%, 280px); }
+  .role-figure-photo figcaption { padding-top: 12px; }
   .role-head { gap: 9px; }
   .role-head h2 { font-size: 1.55rem; }
   .role-org { font-size: .74rem; }
@@ -342,7 +349,7 @@ details[open] > summary .disclosure-icon { transform: rotate(45deg); }
   .story-grid { grid-template-columns: 1fr; gap: 20px; padding-top: 30px; }
   .story-grid h2 { font-size: 2rem; }
   .story-grid p { font-size: .9rem; }
-  .history-illustration { max-width: 420px; width: 100%; justify-self: center; }
+  .history-photo { justify-self: center; }
   .running-section { grid-template-columns: 1fr; gap: 26px; padding: 28px 24px; }
   .running-section h2 { font-size: 2rem; }
   .running-section p { font-size: .87rem; }
