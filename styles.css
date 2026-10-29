@@ -78,6 +78,8 @@ a:hover > .icon-arrow, button:hover > .icon-arrow { transform: translate(3px, -2
 .brand-icon { width: 23px; height: 23px; flex: 0 0 23px; }
 .handshake-icon { border-radius: 3px; }
 .direct-contact { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 20px; margin-top: 14px; }
+.contact-email { display: grid; min-width: 0; }
+.contact-email-label { color: var(--muted); font-size: .66rem; font-weight: 600; }
 .email-group { display: inline-flex; align-items: center; min-width: 0; }
 .direct-link { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; color: var(--muted); font-size: .78rem; text-decoration: none; }
 .direct-link:hover { color: var(--ink); text-decoration: underline; }
@@ -236,7 +238,10 @@ details[open] > summary .disclosure-icon { transform: rotate(45deg); }
 .site-footer { padding: 37px 0 24px; background: #eaf0f6; border-top: 1px solid #d5e0eb; scroll-margin-top: 90px; }
 .footer-main { display: flex; align-items: start; justify-content: space-between; gap: 32px; }
 .footer-title { margin: 0 0 9px; color: var(--ink); font-family: var(--serif); font-size: 1.7rem; letter-spacing: -.03em; }
-.footer-email { color: var(--ink); font-size: .84rem; }
+.footer-emails { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 0; }
+.footer-emails dt { color: var(--muted); font-size: .68rem; font-weight: 600; }
+.footer-emails dd { margin: 0; }
+.footer-email { color: var(--ink); font-size: .84rem; overflow-wrap: anywhere; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 12px 23px; margin-top: 6px; }
 .footer-links a { color: #516c85; font-size: .77rem; text-decoration: none; }
 .footer-links a:hover { color: var(--accent); text-decoration: underline; }
