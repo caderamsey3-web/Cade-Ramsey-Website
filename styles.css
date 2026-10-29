@@ -62,13 +62,13 @@ a:hover > .icon-arrow, button:hover > .icon-arrow { transform: translate(3px, -2
 .button-light:hover { background: #eef3f8; }
 .button-orange { background: var(--accent-light); border-color: var(--accent-light); color: var(--deep); }
 .button-orange:hover { background: #ffbf8f; box-shadow: 0 4px 0 rgba(0,0,0,.12); }
-.home-hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(40px, 7vw, 96px); align-items: center; padding: 66px 0 52px; }
+.home-hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(40px, 7vw, 96px); align-items: center; padding: 66px 0 52px; }
 .home-hero h1 { font-size: clamp(3.6rem, 7vw, 6.2rem); }
 .home-hero h1 span { color: var(--ink); }
 .home-hero .lead { max-width: 510px; margin-bottom: 26px; font-size: 1rem; }
 .home-role { margin: 0 0 18px; color: var(--ink); font-size: 1.16rem; line-height: 1.5; font-weight: 550; letter-spacing: -.02em; }
-.portrait { margin: 0; align-self: start; }
-.portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 27%; border-radius: 3px; background: #d9e1e8; }
+.portrait { width: min(100%, 380px); min-width: 0; margin: 0; align-self: center; justify-self: end; }
+.portrait img { width: 100%; height: auto; max-height: 475px; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 27%; border-radius: 3px; background: #d9e1e8; }
 .portrait figcaption { display: flex; justify-content: space-between; gap: 15px; padding-top: 12px; color: var(--muted); font-size: .69rem; }
 .portrait figcaption span:last-child { color: var(--accent); }
 .home-contact { margin-top: 27px; }
@@ -248,7 +248,7 @@ details[open] > summary .disclosure-icon { transform: rotate(45deg); }
   .js .menu-toggle { display: inline-flex; }
   .js .site-nav { display: none; }
   .js .site-nav.is-open { display: flex; }
-  .home-hero { padding-top: 43px; grid-template-columns: 1.1fr .9fr; gap: 30px; }
+  .home-hero { padding-top: 43px; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 30px; }
   .home-hero h1 { font-size: 4rem; }
   .portrait { align-self: center; }
   .portrait figcaption { flex-direction: column; gap: 2px; }
@@ -274,8 +274,8 @@ details[open] > summary .disclosure-icon { transform: rotate(45deg); }
   .home-role { font-size: 1.08rem; }
   .home-hero .lead { font-size: .95rem; }
   .home-contact { margin-top: 22px; }
-  .portrait { width: min(100%,370px); justify-self: center; }
-  .portrait img { aspect-ratio: 4 / 4.6; object-position: center 22%; }
+  .portrait { width: min(100%, 320px); justify-self: center; }
+  .portrait img { aspect-ratio: 1 / 1; object-position: center 22%; }
   .portrait figcaption { flex-direction: row; }
   .context-strip { grid-template-columns: 1fr 1fr; gap: 20px 15px; }
   .context-strip > div:first-child { grid-column: 1 / -1; }
