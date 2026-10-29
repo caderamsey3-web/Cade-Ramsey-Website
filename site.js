@@ -90,6 +90,42 @@
     });
   });
 
+  const suggestionForm = document.querySelector("[data-book-suggestion]");
+  if (suggestionForm) {
+    const title = suggestionForm.querySelector('[name="book_title"]');
+    const author = suggestionForm.querySelector('[name="author"]');
+    const reason = suggestionForm.querySelector('[name="reason"]');
+    const status = suggestionForm.querySelector("[data-suggestion-status]");
+    const copyButton = suggestionForm.querySelector("[data-copy-suggestion]");
+
+    function prepareSuggestion() {
+      title.setCustomValidity(title.value.trim() ? "" : "Please enter a book title.");
+      if (!suggestionForm.reportValidity()) return null;
+      const lines = ["Hi Cade,", "", "Here’s a book suggestion for your next read:", "", `Title: ${title.value.trim()}`];
+      if (author.value.trim()) lines.push(`Author: ${author.value.trim()}`);
+      if (reason.value.trim()) lines.push("", "Why I recommend it:", reason.value.trim());
+      return { subject: `Book suggestion: ${title.value.trim()}`, body: lines.join("\n") };
+    }
+
+    suggestionForm.addEventListener("input", () => {
+      title.setCustomValidity("");
+      status.textContent = "";
+    });
+    suggestionForm.addEventListener("submit", event => {
+      event.preventDefault();
+      const suggestion = prepareSuggestion();
+      if (!suggestion) return;
+      window.location.href = `${suggestionForm.getAttribute("action")}?subject=${encodeURIComponent(suggestion.subject)}&body=${encodeURIComponent(suggestion.body)}`;
+      status.textContent = "Your email app should open with a draft. If it doesn’t, use Copy suggestion and paste it into an email to cramsey8@byu.edu.";
+    });
+    copyButton.addEventListener("click", async () => {
+      const suggestion = prepareSuggestion();
+      if (!suggestion) return;
+      const copied = await copyText(suggestion.body);
+      status.textContent = copied ? "Suggestion copied. Paste it into an email to cramsey8@byu.edu." : "Copy unavailable. Please use the email link to share your recommendation.";
+    });
+  }
+
   document.querySelectorAll("[data-filter-group]").forEach(group => {
     const controls = [...group.querySelectorAll("[data-filter]")];
     const items = [...group.querySelectorAll("[data-filter-item]")];
@@ -146,7 +182,10 @@
         item.tabIndex = active ? 0 : -1;
       });
       panels.forEach(panel => { panel.hidden = panel.id !== tab.getAttribute("aria-controls"); });
-      if (focus) tab.focus();
+      if (focus) {
+        tab.focus();
+        tab.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "auto" });
+      }
     }
     tabs.forEach((tab, index) => {
       tab.addEventListener("click", () => activate(tab));
