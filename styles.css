@@ -154,7 +154,9 @@ details[open] > summary .disclosure-icon { transform: rotate(45deg); }
 .skills-used span { color: var(--ink); font-weight: 600; }
 .education-block { padding-top: 52px; }
 .education-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 50px; margin-top: 24px; }
-.education-logo { display: block; width: min(100%, 420px); height: auto; margin: 0 0 22px; }
+.education-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); align-items: start; gap: 42px; margin-top: 24px; }
+.education-layout > .education-grid { margin-top: 0; }
+.education-photo { min-width: 0; margin: 0; }
 .education-grid h3 { margin-bottom: 7px; }
 .education-grid p { color: var(--muted); font-size: .88rem; }
 .education-grid .degree { margin-bottom: 5px; color: var(--ink); }
@@ -190,9 +192,12 @@ details[open] > summary .disclosure-icon { transform: rotate(45deg); }
 .project-scroll-button:disabled { opacity: .35; }
 .project-item > .project-stage { margin-bottom: 6px; color: var(--accent); font-size: .68rem; font-weight: 650; letter-spacing: .06em; text-transform: uppercase; }
 @media (max-width: 1000px) {
+  .education-layout { grid-template-columns: 200px minmax(0, 1fr); gap: 28px; }
   #building .project-carousel { grid-auto-columns: 44%; }
 }
 @media (max-width: 620px) {
+  .education-layout { grid-template-columns: 1fr; gap: 24px; }
+  .education-photo { width: min(100%, 360px); }
   #building .project-carousel { grid-auto-columns: 86%; }
 }
 .school-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 34px; }
@@ -284,6 +289,7 @@ details[open] > summary .disclosure-icon { transform: rotate(45deg); }
   .story-grid { gap: 38px; }
 }
 @media (max-width: 800px) {
+  .education-layout { grid-template-columns: 170px minmax(0, 1fr); gap: 25px; }
   .elsewhere { grid-template-columns: 1fr; gap: 30px; }
   .wrap { width: min(1120px, calc(100% - 42px)); }
   .header-inner { min-height: 67px; flex-wrap: wrap; gap: 0 25px; }
