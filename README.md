@@ -11,7 +11,7 @@ A static portfolio for job applications and professional networking.
 - `books.html`: a keyboard-accessible shelf of three favorites and an embedded Google Form for book suggestions.
 - `styles.css`: shared layout, typography, responsive styling, and interaction states.
 - `site.js`: navigation, filters, disclosures, book selection, and email copying.
-- `assets/`: original portrait, Capitol and Chichén Itzá photos, and Handshake logo.
+- `assets/`: original portrait, experience and travel photos, and Handshake logo.
 
 ## Preview
 
