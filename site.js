@@ -103,6 +103,9 @@
         item.hidden = !matches;
         if (matches) visible += 1;
       });
+      group.querySelectorAll("[data-filter-section]").forEach(section => {
+        section.hidden = ![...section.querySelectorAll("[data-filter-item]")].some(item => !item.hidden);
+      });
       controls.forEach(control => {
         control.setAttribute("aria-pressed", String(control.dataset.filter === category));
       });
