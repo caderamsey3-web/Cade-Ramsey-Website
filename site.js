@@ -168,10 +168,33 @@
     activate(tabs.find(tab => tab.getAttribute("aria-selected") === "true") || tabs[0]);
   });
 
+  function scrollToTop() {
+    setMenu(false);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+    });
+  }
+
+  document.querySelectorAll('a[href="#top"]').forEach(link => {
+    link.addEventListener("click", event => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      if (window.location.hash !== "#top") window.history.pushState(null, "", "#top");
+      document.querySelector(".wordmark")?.focus({ preventScroll: true });
+      scrollToTop();
+    });
+  });
+
   function openHashTarget() {
     let id;
     try { id = decodeURIComponent(window.location.hash.slice(1)); } catch { return; }
     if (!id) return;
+    if (id === "top") {
+      window.requestAnimationFrame(scrollToTop);
+      return;
+    }
     const target = document.getElementById(id);
     if (!target) return;
     const item = target.closest("[data-filter-item]");
