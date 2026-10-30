@@ -117,6 +117,42 @@
     filter(controls.find(control => control.getAttribute("aria-pressed") === "true")?.dataset.filter || "all");
   });
 
+  document.querySelectorAll("[data-project-carousel]").forEach(viewport => {
+    const group = viewport.closest("[data-filter-group]");
+    const previous = group?.querySelector("[data-project-prev]");
+    const next = group?.querySelector("[data-project-next]");
+    if (!previous || !next) return;
+    const behavior = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    function updateButtons() {
+      const end = Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+      previous.disabled = viewport.scrollLeft <= 2;
+      next.disabled = viewport.scrollLeft >= end - 2;
+    }
+    function scrollProject(direction) {
+      const card = [...viewport.querySelectorAll("[data-filter-item]")].find(item => !item.hidden);
+      if (!card) return;
+      const gap = parseFloat(window.getComputedStyle(viewport).columnGap) || 0;
+      viewport.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: behavior() });
+    }
+    previous.addEventListener("click", () => scrollProject(-1));
+    next.addEventListener("click", () => scrollProject(1));
+    viewport.addEventListener("scroll", updateButtons, { passive: true });
+    viewport.addEventListener("keydown", event => {
+      if (event.target !== viewport || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+      event.preventDefault();
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") scrollProject(event.key === "ArrowLeft" ? -1 : 1);
+      else viewport.scrollTo({ left: event.key === "Home" ? 0 : viewport.scrollWidth, behavior: behavior() });
+    });
+    group.addEventListener("filterchange", () => {
+      viewport.scrollTo({ left: 0, behavior: "auto" });
+      updateButtons();
+    });
+    if ("ResizeObserver" in window) new ResizeObserver(updateButtons).observe(viewport);
+    else window.addEventListener("resize", updateButtons);
+    updateButtons();
+  });
+
   document.querySelectorAll("[data-expand-all]").forEach(button => {
     const group = button.closest("[data-filter-group]");
     if (!group) return;

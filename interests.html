@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#f6f8fb">
   <meta name="description" content="Cade Ramsey’s coding projects, interest in ancient American civilizations, and training for the Ogden Marathon.">
   <title>Interests | Cade Ramsey</title>
-  <link rel="stylesheet" href="styles.css?v=personal-photos">
-  <script src="site.js?v=back-to-top" defer></script>
+  <link rel="stylesheet" href="styles.css?v=app-carousel">
+  <script src="site.js?v=app-carousel" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -30,8 +30,9 @@
     <nav class="section-nav" aria-label="On this page"><a href="#building">Building apps</a><a href="#history">Ancient history</a><a href="#running">Distance running</a></nav>
     <section class="interest-section" id="building" aria-labelledby="building-title" data-filter-group data-item-label="projects">
       <div class="section-copy"><p class="eyebrow">Vibe coding</p><h2 id="building-title">Tools I can actually use.</h2><p>I use AI to help turn ideas into working code. These are a few projects I’ve been exploring, from this website to a better way to manage my finances.</p></div>
-      <div class="filter-bar"><div class="filter-options" role="group" aria-label="Filter projects"><button class="filter-button" type="button" data-filter="all" aria-pressed="true">All projects</button><button class="filter-button" type="button" data-filter="tools" aria-pressed="false">Practical tools</button><button class="filter-button" type="button" data-filter="music" aria-pressed="false">Music</button></div><span class="filter-count" data-filter-status role="status" aria-live="polite">Showing 3 of 3 projects</span></div>
-      <div class="project-list">
+      <div class="filter-bar"><div class="filter-options" role="group" aria-label="Filter projects"><button class="filter-button" type="button" data-filter="all" aria-pressed="true">All projects</button><button class="filter-button" type="button" data-filter="tools" aria-pressed="false">Practical tools</button><button class="filter-button" type="button" data-filter="music" aria-pressed="false">Music</button></div><span class="filter-count" data-filter-status role="status" aria-live="polite">Showing 4 of 4 projects</span></div>
+      <div class="project-navigation"><p id="project-scroll-hint">Scroll sideways to explore the projects.</p><div class="project-scroll-buttons" role="group" aria-label="Scroll app projects"><button class="project-scroll-button" type="button" data-project-prev aria-controls="app-projects" aria-label="Scroll to previous project"><span aria-hidden="true">←</span></button><button class="project-scroll-button" type="button" data-project-next aria-controls="app-projects" aria-label="Scroll to next project"><span aria-hidden="true">→</span></button></div></div>
+      <div class="project-list project-carousel" id="app-projects" data-project-carousel tabindex="0" role="region" aria-label="App projects" aria-describedby="project-scroll-hint">
         <article class="project-item" data-filter-item data-category="tools" id="website-project"><div class="project-art" aria-hidden="true"><svg viewBox="0 0 320 140" xmlns="http://www.w3.org/2000/svg">
               <rect x="61" y="19" width="198" height="124" rx="10" fill="#fff" stroke="#c1d1e1"></rect>
               <path d="M61 43h198" stroke="#d9e2ed"></path><circle cx="75" cy="31" r="2.5" fill="#ed8a3b"></circle><circle cx="84" cy="31" r="2.5" fill="#c1d1e1"></circle><circle cx="93" cy="31" r="2.5" fill="#c1d1e1"></circle>
@@ -53,6 +54,19 @@
               <rect x="87" y="104" width="36" height="4" rx="2" fill="#a6bbd0"></rect>
             </svg>
           </div><h3>A Letterboxd for music</h3><p>A music app inspired by the idea behind Letterboxd.</p><details class="project-notes"><summary><span>About the idea</span><svg class="disclosure-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 10h14M10 3v14"/></svg></summary><div class="details-body"><p>A music app inspired by Letterboxd. It’s a project that brings together the music I enjoy and my interest in making an idea into something I can use.</p></div></details></article>
+        <article class="project-item" data-filter-item data-category="tools" id="group-decision-project">
+          <div class="project-art" aria-hidden="true"><svg viewBox="0 0 320 140" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="70" cy="42" r="12" fill="#183a5e"/><circle cx="70" cy="72" r="12" fill="#739baf"/><circle cx="70" cy="102" r="12" fill="#b35322"/>
+            <path d="M90 42h22m-22 30h22m-22 30h22" stroke="#a5bcd1" stroke-width="3" stroke-linecap="round"/>
+            <rect x="125" y="18" width="136" height="108" rx="8" fill="#fff" stroke="#c1d1e1"/>
+            <rect x="139" y="34" width="76" height="5" rx="2" fill="#183a5e"/>
+            <rect x="139" y="51" width="107" height="24" rx="4" fill="#e8eff7"/><rect x="148" y="61" width="55" height="4" rx="2" fill="#a5bcd1"/>
+            <rect x="139" y="84" width="107" height="24" rx="4" fill="#f7e0ce"/><rect x="148" y="94" width="55" height="4" rx="2" fill="#b35322"/>
+            <path d="m222 96 5 5 10-11" fill="none" stroke="#b35322" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg></div>
+          <p class="project-stage">App concept</p><h3>Group Decision</h3><p>A simpler way for friends to choose where to eat, what to do, or where to go.</p>
+          <details class="project-notes"><summary><span>About the idea</span><svg class="disclosure-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 10h14M10 3v14"/></svg></summary><div class="details-body"><p>The idea is to bring everyone’s preferences and budgets into one place, compare the options, and help the group find a choice that works for everyone.</p></div></details>
+        </article>
       </div>
     </section>
     <section class="interest-section story-grid" id="history" aria-labelledby="history-title" data-reveal>
