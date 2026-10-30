@@ -101,7 +101,7 @@ a:hover > .icon-arrow, button:hover > .icon-arrow { transform: translate(3px, -2
 .work-year { color: var(--muted); font-size: .78rem; }
 .work-name { display: block; color: var(--ink); font-size: 1.03rem; font-weight: 650; }
 .work-role { display: block; margin-top: 3px; color: var(--muted); font-size: .83rem; }
-.elsewhere { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; margin: 48px 0 64px; }
+.elsewhere { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 42px; margin: 48px 0 64px; }
 .elsewhere-link { display: block; padding-top: 23px; border-top: 2px solid var(--ink); text-decoration: none; }
 .elsewhere-link .eyebrow { margin-bottom: 12px; }
 .elsewhere-link h2 { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 12px; font-size: 2rem; }
@@ -264,6 +264,7 @@ details[open] > summary .disclosure-icon { transform: rotate(45deg); }
   .story-grid { gap: 38px; }
 }
 @media (max-width: 800px) {
+  .elsewhere { grid-template-columns: 1fr; gap: 30px; }
   .wrap { width: min(1120px, calc(100% - 42px)); }
   .header-inner { min-height: 67px; flex-wrap: wrap; gap: 0 25px; }
   .site-nav { flex: 0 0 100%; gap: 22px; padding-bottom: 12px; flex-wrap: wrap; }
